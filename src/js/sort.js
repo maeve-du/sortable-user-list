@@ -1,6 +1,6 @@
 import * as userDom from '@/js/userDom';
 import * as tableDom from '@/js/tableDom';
-import { UserInfoStructure, User, createUser } from '@/js/User';
+import { UserInfoStructure, User, createUser } from '@/js/user';
 import sortBy from 'sort-by';
 
 
