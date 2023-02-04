@@ -1,5 +1,21 @@
+@use 'center.scss' as center;
+@import 'normalize.css';
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;500;700&display=swap');
+
+$dark-blue: #1D1E42;
+$light-blue: #ECF0FC;
+$orange: #FD9F10;
+$light-orange: #ECC17F;
+$hsl-white: hsl(0, 0%, 100%);
+$light-grey: #F8F8F8;
+$dark-grey: #A3A1AB;
+$sidebar-width: 18.75rem;
+$divider: #E0E0E0;
+
 :root {
-  font-family: "PingFang FC", "Mircsoft Yahei", monospace;
+  font-family: 'JetBrains Mono', "PingFang FC", "Mircsoft Yahei", monospace;
+  font-weight: 300;
 }
 
 *,
@@ -12,8 +28,142 @@
   box-sizing: border-box;
 }
 
+input {
+  outline: none;
+  border: none;
+  border-radius: .25rem;
+}
+
 html,
 body {
   width: 100vw;
   height: 100vh;
+  background-color: $light-blue;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  @include center.flexCenter;
+}
+
+.user_info {
+  width: 72rem;
+  min-width: 1152px;
+  height: 51.25rem;
+  background-color: $light-grey;
+  border-radius: 1.25rem;
+
+  display: flex;
+}
+
+.user_list {
+  width: calc(100% - $sidebar-width);
+  height: 100%;
+
+  .userlist_header {
+    width: 100%;
+    height: 6rem;
+    background-color: $hsl-white;
+    border-top-left-radius: 1.25rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+    padding-left: 3.5rem;
+
+  }
+
+  h1 {
+    font-weight: 700;
+  }
+
+  .table_container {
+    width: 100%;
+    height: calc(100% - 60px - 60px); // height: 100%;
+    padding: 3.75rem 2rem;
+    overflow-y: scroll;
+  }
+
+  table {
+    width: 100%;
+    max-height: 200px; // min-height: 400px;
+    background-color: $hsl-white;
+
+    border-radius: .5rem;
+    padding: 0 1.25rem;
+
+
+    th,
+    td {
+      text-align: left;
+      height: 62px;
+      color: $dark-blue;
+      font-weight: 500;
+    }
+
+    tr:not(:last-child) {
+      box-shadow: 0 0.5px 0 0 $divider;
+    }
+
+    th[scope=col] {
+      color: $dark-grey;
+      text-transform: uppercase;
+      font-weight: 300;
+      box-shadow: 0 0.5px 0 0 $divider;
+
+    }
+
+  }
+}
+
+.sidebar_left {
+  background-color: $dark-blue;
+  width: $sidebar-width;
+  height: 100%;
+
+  border-radius: 0 1.25rem 1.25rem 0;
+
+  @include center.flexCenter
+}
+
+.input_group {
+  color: $hsl-white;
+
+  input {
+    height: 3.25rem;
+    padding: .9375rem .75rem;
+    color: $orange;
+    font-size: 1rem;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+    margin-bottom: 1.5rem;
+  }
+
+
+
+  .age_title {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0;
+    height: 1rem;
+
+    p {
+      color: $orange;
+    }
+  }
+
+  button {
+    width: 100%;
+    height: 3.25rem;
+    background-color: $orange;
+    border-radius: .25rem;
+    color: $hsl-white;
+  }
 }
