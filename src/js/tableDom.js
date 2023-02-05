@@ -9,7 +9,7 @@ tableContainerDom.appendChild(tableDom);
 export const tableTheadDom = document.createElement('thead');
 
 
-export const tableColTitles = ["#", "Name", "Age", "Income"];
+export const tableColTitles = ["id", "name", "age", "income"];
 
 tableColTitles.forEach((element) => {
   const dom = document.createElement('th');

@@ -103,17 +103,3 @@ sidebarLeftDom.appendChild(inputGroupDom);
 InputAgeDom.addEventListener('input', () => {
   displayAgeDom.textContent = InputAgeDom.value;
 });
-
-
-// inputsumbitButton.addEventListener('click', (e) => {
-//   e.preventDefault();
-//   'click add user';
-// });
-
-// inputsumbitButton.addEventListener('keyup', (e) => {
-//   e.preventDefault();
-//   if (e.key === 'Enter') {
-//     'click adduser';
-//   }
-
-// });

@@ -2,17 +2,19 @@ import { isNumber, isString } from '@/js/utils';
 
 // 构造函数，创造新的object
 export function UserInfoStructure() {
+  this.id = undefined;
   this.name = undefined;
   this.age = undefined;
   this.income = undefined;
 }
 
 export class User {
-
+  #id = undefined;
   #name = undefined;
   #age = undefined;
   #income = undefined;
   constructor(userInfo) {
+    this.id = userInfo.id;
     this.#name = userInfo.name;
     this.#age = userInfo.age;
     this.#income = userInfo.income;

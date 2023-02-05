@@ -3,7 +3,8 @@ import '@/js/utils';
 import '@/js/sort';
 
 import { userDom } from './userDom';
-import { sort } from '@/js/sort';
+import { sort, sortOptions, renderTable } from '@/js/sort';
+import { tableTheadDom } from './tableDom';
 
 const appDom = document.getElementById('app');
 
@@ -14,10 +15,55 @@ const headerCell = table.querySelectorAll('th');
 
 headerCell.forEach((element) => {
   element.addEventListener('click', () => {
-    if (element.textContent === 'Name') {
-      // console.log('¥¥¥');
-      console.log(sort(["age", "name"]));
-    }
+
+    if (element.textContent === 'id') {
+      if (sortOptions.includes('id')) {
+        const index = sortOptions.indexOf('id');
+        sortOptions.splice(index, 1);
+        tableTheadDom.children[0].classList.remove('active');
+      } else {
+        sortOptions.unshift('id');
+        tableTheadDom.children[0].classList.add('active');
+      }
+      sort(sortOptions);
+    };
+
+    if (element.textContent === 'name') {
+
+      if (sortOptions.includes('name')) {
+        const index = sortOptions.indexOf('name');
+        sortOptions.splice(index, 1);
+        tableTheadDom.children[1].classList.remove('active');
+      } else {
+        sortOptions.unshift('name');
+        tableTheadDom.children[1].classList.add('active');
+      }
+    };
+
+    if (element.textContent === 'age') {
+      if (sortOptions.includes('age')) {
+        const index = sortOptions.indexOf('age');
+        sortOptions.splice(index, 1);
+        tableTheadDom.children[2].classList.remove('active');
+      } else {
+        sortOptions.unshift('age');
+        tableTheadDom.children[2].classList.add('active');
+      }
+    };
+
+    if (element.textContent === 'income') {
+      if (sortOptions.includes('income')) {
+        const index = sortOptions.indexOf('income');
+        sortOptions.splice(index, 1);
+        tableTheadDom.children[3].classList.remove('active');
+      } else {
+        sortOptions.unshift('income');
+        tableTheadDom.children[3].classList.add('active');
+      }
+    };
+    console.log('sortoptions', sortOptions);
+    renderTable();
+
   });
 })
 

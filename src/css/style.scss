@@ -103,7 +103,6 @@ body {
       }
     }
 
-
     th[scope=col] {
       height: 60px;
       color: $dark-grey;
@@ -111,8 +110,11 @@ body {
       font-weight: 300;
       box-shadow: 0 0.5px 0 0 $divider;
 
+      &.active {
+        background-color: $light-orange;
+        color: white;
+      }
     }
-
   }
 }
 
