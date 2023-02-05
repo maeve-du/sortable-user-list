@@ -86,6 +86,9 @@ userDom.inputsumbitButton.addEventListener('click', (e) => {
   }
 
   const form = document.querySelector('form');
+
   form.reset();
+  userDom.InputAgeDom.value = 18;
+  userDom.displayAgeDom.textContent = userDom.InputAgeDom.value;
 
 });
