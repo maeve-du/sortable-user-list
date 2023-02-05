@@ -97,7 +97,7 @@ inputGroupDom.appendChild(inputActionDom);
 
 sidebarLeftDom.appendChild(inputGroupDom);
 
-InputAgeDom.addEventListener('click', () => {
+InputAgeDom.addEventListener('input', () => {
   displayAgeDom.textContent = InputAgeDom.value;
 });
 

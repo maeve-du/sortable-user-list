@@ -1,17 +1,9 @@
 @use 'center.scss' as center;
+@import './range.scss';
 @import 'normalize.css';
+@import './colors.scss';
 
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;500;700&display=swap');
-
-$dark-blue: #1D1E42;
-$light-blue: #ECF0FC;
-$orange: #FD9F10;
-$light-orange: #ECC17F;
-$hsl-white: hsl(0, 0%, 100%);
-$light-grey: #F8F8F8;
-$dark-grey: #A3A1AB;
-$sidebar-width: 18.75rem;
-$divider: #E0E0E0;
 
 :root {
   font-family: 'JetBrains Mono', "PingFang FC", "Mircsoft Yahei", monospace;
@@ -64,7 +56,7 @@ body {
   .userlist_header {
     width: 100%;
     height: 6rem;
-    background-color: $hsl-white;
+    background-color: white;
     border-top-left-radius: 1.25rem;
 
     display: flex;
@@ -89,7 +81,7 @@ body {
   table {
     width: 100%;
     max-height: 200px; // min-height: 400px;
-    background-color: $hsl-white;
+    background-color: white;
 
     border-radius: .5rem;
     padding: 0 1.25rem;
@@ -98,16 +90,22 @@ body {
     th,
     td {
       text-align: left;
-      height: 62px;
       color: $dark-blue;
       font-weight: 500;
     }
 
-    tr:not(:last-child) {
+    tr {
       box-shadow: 0 0.5px 0 0 $divider;
+      height: 52px;
+
+      &:last-child {
+        box-shadow: none;
+      }
     }
 
+
     th[scope=col] {
+      height: 60px;
       color: $dark-grey;
       text-transform: uppercase;
       font-weight: 300;
@@ -129,7 +127,7 @@ body {
 }
 
 .input_group {
-  color: $hsl-white;
+  color: white;
 
   input {
     height: 3.25rem;
@@ -146,8 +144,6 @@ body {
     margin-bottom: 1.5rem;
   }
 
-
-
   .age_title {
     display: flex;
     flex-direction: row;
@@ -159,11 +155,28 @@ body {
     }
   }
 
+
+
   button {
     width: 100%;
     height: 3.25rem;
     background-color: $orange;
     border-radius: .25rem;
-    color: $hsl-white;
+    color: white;
+    border: none;
+    outline: none;
+
+    &:hover {
+      background-color: $dark-orange;
+      color: hsla(0, 0%, 100%, 0.5);
+    }
+
+    &:active {
+      background-color: $light-orange;
+      color: hsla(0, 0%, 100%, 0.3);
+      ;
+    }
   }
+
+
 }
