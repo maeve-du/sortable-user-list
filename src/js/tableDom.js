@@ -1,3 +1,5 @@
+import * as sort from '@/js/sort';
+
 export const tableContainerDom = document.createElement('div');
 tableContainerDom.classList.add('table_container');
 

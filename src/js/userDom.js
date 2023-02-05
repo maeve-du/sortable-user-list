@@ -28,11 +28,13 @@ const createInputGroup = function (labelDom, inputDom) {
   inputDivDom.appendChild(inputDom);
 };
 
-export const inputGroupDom = document.createElement('div');
+export const inputGroupDom = document.createElement('form');
 inputGroupDom.classList.add('input_group');
 
 export const InputNameDom = document.createElement('input');
 InputNameDom.id = 'user_name';
+InputNameDom.required = true;
+InputNameDom.ariaRequired = true;
 
 export const labelNameDom = document.createElement('label');
 labelNameDom.textContent = 'Name:';
@@ -46,14 +48,15 @@ export const labelAgeDom = document.createElement('label');
 labelAgeDom.textContent = 'Age:';
 labelAgeDom.setAttribute('for', InputAgeDom.id);
 
-const inputIncomeDom = document.createElement('input');
-inputIncomeDom.id = 'user_income';
-
-
 export const displayAgeDom = document.createElement('p');
 // displayAgeDom.textContent = '18';
 InputAgeDom.value = 18;
 displayAgeDom.textContent = InputAgeDom.value;
+
+export const inputIncomeDom = document.createElement('input');
+inputIncomeDom.id = 'user_income';
+inputIncomeDom.required = true;
+inputIncomeDom.ariaRequired = true;
 
 export const labelIncomeDom = document.createElement('label');
 labelIncomeDom.textContent = "Income:";
@@ -101,3 +104,16 @@ InputAgeDom.addEventListener('input', () => {
   displayAgeDom.textContent = InputAgeDom.value;
 });
 
+
+// inputsumbitButton.addEventListener('click', (e) => {
+//   e.preventDefault();
+//   'click add user';
+// });
+
+// inputsumbitButton.addEventListener('keyup', (e) => {
+//   e.preventDefault();
+//   if (e.key === 'Enter') {
+//     'click adduser';
+//   }
+
+// });
