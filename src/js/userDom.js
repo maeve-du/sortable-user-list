@@ -113,3 +113,10 @@ footerLink.textContent = 'GitHub: @maeve-du';
 footerDom.appendChild(footerLink);
 
 sidebarLeftDom.appendChild(footerDom);
+
+
+const inputs = document.getElementsByTagName("input");
+
+for (const input of inputs) {
+  input.autocomplete = "off";
+}

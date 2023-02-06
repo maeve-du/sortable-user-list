@@ -128,7 +128,6 @@ body {
 
   @include center.flexCenter;
   flex-direction: column;
-
   position: relative;
 }
 
@@ -137,9 +136,18 @@ body {
 
   input {
     height: 2.375rem;
-    padding: .9375rem .75rem;
     color: $orange;
     font-size: 1rem;
+
+    border: 2px solid transparent;
+
+    &:focus:not([type="range"]) {
+      border: 2px solid $light-orange
+    }
+
+    &:not([type="range"]) {
+      padding: .9375rem .75rem;
+    }
   }
 
   div {
