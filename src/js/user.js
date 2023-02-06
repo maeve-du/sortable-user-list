@@ -1,4 +1,4 @@
-import { isNumber, isString } from '@/js/utils';
+import { isEmpty, isNumber, isString } from '@/js/utils';
 
 // 构造函数，创造新的object
 export function UserInfoStructure() {
@@ -39,16 +39,21 @@ export function createUser(userInfo) {
 
   if (!isString(userInfo.name)) {
     errorFlag = true;
-    errorInfo += "Name is not string";
+    errorInfo += "Name is not string \n";
   }
 
   if (!isNumber(userInfo.age)) {
     errorFlag = true;
-    errorInfo += "Age is not number";
+    errorInfo += "Age is not number \n";
   }
   if (!isNumber(userInfo.income)) {
     errorFlag = true;
-    errorInfo += "Income is not number";
+    errorInfo += "Income is not number \n";
+  }
+
+  if (!isEmpty(userInfo.name) || !isEmpty(userInfo.age) || !isEmpty(userInfo.income)) {
+    errorFlag = true;
+    errorInfo += "Input can not be empty \n";
   }
 
   if (errorFlag) {

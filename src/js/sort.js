@@ -79,14 +79,14 @@ userDom.inputsumbitButton.addEventListener('click', (e) => {
     userInfoList.push({ ...userInfo });
     createCellDataDom(userInfoList[userNumber]);
     userNumber++;
+
+    const form = document.querySelector('form');
+    form.reset();
+    userDom.InputAgeDom.value = 18;
+    userDom.displayAgeDom.textContent = userDom.InputAgeDom.value;
   } else {
-    console.error(user.errorInfo);
+    alert(user.errorInfo);
+    // console.error(user.errorInfo);
   }
-
-  const form = document.querySelector('form');
-
-  form.reset();
-  userDom.InputAgeDom.value = 18;
-  userDom.displayAgeDom.textContent = userDom.InputAgeDom.value;
 
 });
