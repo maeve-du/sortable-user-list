@@ -21,3 +21,4 @@ The project was built using the following technologies:
 - Allows users to add their information to a list.
 - Displays the user list in a table format.
 - Sorts the user list by different attributes, such as name or age.
+- Show sort order next to header text on selection
