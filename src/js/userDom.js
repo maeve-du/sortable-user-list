@@ -12,7 +12,6 @@ sidebarLeftDom.classList.add('sidebar_left');
 
 
 // create user list dom
-
 export const userListHeaderDom = document.createElement('div');
 userListHeaderDom.classList.add('userlist_header');
 
@@ -103,3 +102,14 @@ sidebarLeftDom.appendChild(inputGroupDom);
 InputAgeDom.addEventListener('input', () => {
   displayAgeDom.textContent = InputAgeDom.value;
 });
+
+
+const footerDom = document.createElement('footer');
+footerDom.classList.add('footer');
+const footerLink = document.createElement('a');
+footerLink.href = "https://github.com/maeve-du/sortable-user-list";
+footerLink.target = '_blank';
+footerLink.textContent = 'GitHub: @maeve-du';
+footerDom.appendChild(footerLink);
+
+sidebarLeftDom.appendChild(footerDom);

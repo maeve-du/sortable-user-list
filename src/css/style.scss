@@ -92,6 +92,7 @@ body {
       text-align: left;
       color: $dark-blue;
       font-weight: 500;
+      padding-left: .5rem;
     }
 
     tr {
@@ -125,7 +126,10 @@ body {
 
   border-radius: 0 1.25rem 1.25rem 0;
 
-  @include center.flexCenter
+  @include center.flexCenter;
+  flex-direction: column;
+
+  position: relative;
 }
 
 .input_group {
@@ -181,5 +185,20 @@ body {
     }
   }
 
+
+}
+
+.footer {
+  position: absolute;
+  bottom: 1rem;
+
+  a {
+    color: hsl(0, 0%, 100%, 0.4);
+    font-size: .75rem;
+
+    &:hover {
+      color: hsl(0, 0%, 100%, 1);
+    }
+  }
 
 }
