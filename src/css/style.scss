@@ -128,6 +128,8 @@ body {
 
   @include center.flexCenter;
   flex-direction: column;
+  align-items: stretch;
+  padding: 0 1rem;
   position: relative;
 }
 
@@ -147,6 +149,12 @@ body {
 
     &:not([type="range"]) {
       padding: .9375rem .75rem;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $divider;
+      font-weight: 300;
+
     }
   }
 
@@ -168,8 +176,6 @@ body {
       color: $orange;
     }
   }
-
-
 
   button {
     margin-top: 4rem;
@@ -193,12 +199,13 @@ body {
     }
   }
 
-
 }
 
 .footer {
   position: absolute;
   bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
 
   a {
     color: hsl(0, 0%, 100%, 0.4);

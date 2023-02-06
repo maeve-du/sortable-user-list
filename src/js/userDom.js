@@ -31,6 +31,7 @@ export const inputGroupDom = document.createElement('form');
 inputGroupDom.classList.add('input_group');
 
 export const InputNameDom = document.createElement('input');
+InputNameDom.placeholder = "Enter full Name...";
 InputNameDom.id = 'user_name';
 InputNameDom.required = true;
 InputNameDom.ariaRequired = true;
@@ -53,6 +54,7 @@ InputAgeDom.value = 18;
 displayAgeDom.textContent = InputAgeDom.value;
 
 export const inputIncomeDom = document.createElement('input');
+inputIncomeDom.placeholder = "Enter monthly income...";
 inputIncomeDom.id = 'user_income';
 inputIncomeDom.required = true;
 inputIncomeDom.ariaRequired = true;
