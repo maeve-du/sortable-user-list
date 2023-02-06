@@ -8,5 +8,5 @@ export function isString(element) {
 
 export function isEmpty(element) {
   // return element.toString().trim().length !== 0;
-  return element.toString().trim() === "";
+  return element.toString().trim() !== "";
 }
