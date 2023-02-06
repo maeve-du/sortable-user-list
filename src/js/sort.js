@@ -56,8 +56,6 @@ export const renderTable = function () {
     tableDom.tableTbodyDom.removeChild(tableDom.tableTbodyDom.firstChild);
   }
   const sortedList = sort(sortOptions);
-
-  console.log('¥¥¥', sortedList);
   sortedList.forEach((data) => {
     createCellDataDom(data);
   });

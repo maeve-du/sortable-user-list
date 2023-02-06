@@ -61,6 +61,11 @@ headerCell.forEach((element) => {
         tableTheadDom.children[3].classList.add('active');
       }
     };
+
+    if (!sortOptions.length) {
+      sortOptions.push('id');
+    }
+
     console.log('sortoptions', sortOptions);
     renderTable();
 
