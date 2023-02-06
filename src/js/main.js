@@ -13,8 +13,10 @@ appDom.appendChild(userDom);
 const table = document.querySelector('table');
 const headerCell = table.querySelectorAll('th');
 
+let sortOrder = 0;
+
 headerCell.forEach((element) => {
-  element.addEventListener('click', () => {
+  element.addEventListener('click', function () {
 
     if (element.textContent === 'id') {
       if (sortOptions.includes('id')) {
@@ -65,6 +67,11 @@ headerCell.forEach((element) => {
     if (!sortOptions.length) {
       sortOptions.push('id');
     }
+
+    // update the data-order attribute with the sort order of each header cell
+    headerCell.forEach((headerEl, i) => {
+      headerEl.dataset.order = sortOptions.indexOf(headerEl.textContent) + 1;
+    });
 
     console.log('sortoptions', sortOptions);
     renderTable();
