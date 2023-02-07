@@ -71,9 +71,10 @@ userDom.inputsumbitButton.addEventListener('click', (e) => {
   const userInfo = new UserInfoStructure();
   userInfo.id = userNumber + 1;
 
-  // Transform the first letter of name to uppercase
+  // Transform the first letter of each word in the inputted name to uppercase
   // to ensure proper sorting with the case-sensitive sort function
   userInfo.name = capFirstLetter(userDom.InputNameDom.value);
+  userInfo.age = +userDom.InputAgeDom.value;
   userInfo.income = +userDom.inputIncomeDom.value;
 
   const user = createUser(userInfo);
