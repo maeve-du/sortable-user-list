@@ -22,3 +22,7 @@ The project was built using the following technologies:
 - Displays the user list in a table format.
 - Sorts the user list by different attributes, such as name or age.
 - Show sort order next to header text on selection
+
+## Demo Preview
+
+[Live Demo](https://sortable-user-list.vercel.app)
