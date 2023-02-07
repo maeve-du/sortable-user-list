@@ -2,6 +2,7 @@ import * as userDom from '@/js/userDom';
 import * as tableDom from '@/js/tableDom';
 import { UserInfoStructure, User, createUser } from '@/js/user';
 import sortBy from 'sort-by';
+import { capFirstLetter } from './utils';
 
 
 export let userInfoList = [
@@ -69,8 +70,10 @@ userDom.inputsumbitButton.addEventListener('click', (e) => {
 
   const userInfo = new UserInfoStructure();
   userInfo.id = userNumber + 1;
-  userInfo.name = userDom.InputNameDom.value;
-  userInfo.age = +userDom.InputAgeDom.value;
+
+  // Transform the first letter of name to uppercase
+  // to ensure proper sorting with the case-sensitive sort function
+  userInfo.name = capFirstLetter(userDom.InputNameDom.value);
   userInfo.income = +userDom.inputIncomeDom.value;
 
   const user = createUser(userInfo);
